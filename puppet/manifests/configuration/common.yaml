@@ -1,0 +1,4 @@
+---
+openjdk-version : "java-1.7.0-openjdk"
+hadoop-download-url : "http://apache.mirrors.spacedump.net/hadoop/common/stable/hadoop-2.2.0.tar.gz"
+hadoop-tar-gz : "hadoop-2.2.0.tar.gz"
