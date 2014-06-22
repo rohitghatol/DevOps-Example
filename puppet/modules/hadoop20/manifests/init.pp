@@ -9,10 +9,23 @@ class hadoop20 {
     environment => ["JAVA_HOME=/usr/lib/jvm/default-java","HADOOP_PREFIX=/usr/lib/hadoop-2.2.0","HADOOP_HOME=/usr/lib/hadoop-2.2.0","HADOOP_COMMON_HOME=/usr/lib/hadoop-2.2.0","HADOOP_CONF_DIR=/usr/lib/hadoop-2.2.0/etc/hadoop","HADOOP_HDFS_HOME=/usr/lib/hadoop-2.2.0","HADOOP_MAPRED_HOME=/usr/lib/hadoop-2.2.0","HADOOP_YARN_HOME=/usr/lib/hadoop-2.2.0"]
   }
 
+  exec { '/etc/init.d/iptables save':
+
+  }
+
+  exec {'/etc/init.d/iptables stop':
+    require => Exec['/etc/init.d/iptables save']
+  }
+
+  exec {'chkconfig iptables off':
+    require => Exec['/etc/init.d/iptables stop']
+  }
+
   file { 'env.sh':
     ensure => present,
     path => '/etc/profile.d/env.sh',
     content=>template('hadoop20/env.sh.erb'),
+    require => Exec['chkconfig iptables off']
 
   }
 

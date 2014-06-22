@@ -1,5 +1,5 @@
 ---
 java_path : "/usr/lib/jvm/default-java"
 openjdk-version : "java-1.6.0-openjdk-devel"
-hadoop-download-url : "http://apache.mirrors.spacedump.net/hadoop/common/stable/hadoop-2.2.0.tar.gz"
+hadoop-download-url : "http://apache.mirrors.spacedump.net/hadoop/common/hadoop-2.2.0/hadoop-2.2.0.tar.gz"
 hadoop-tar-gz : "hadoop-2.2.0.tar.gz"
