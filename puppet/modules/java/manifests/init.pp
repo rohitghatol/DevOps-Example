@@ -1,4 +1,5 @@
 class java {
+
   require java::params
   package {'java::package':
     ensure => present,
@@ -23,14 +24,14 @@ class java {
     ensure  => link,
     path    => '/usr/bin/javac',
     target  => '/usr/lib/jvm/default-java/bin/javac',
-    require => File['jvm::link'],
+    require => File['java::link'],
   }
 
   file {'jps::link':
     ensure  => link,
     path    => '/usr/bin/jps',
     target  => '/usr/lib/jvm/default-java/bin/jps',
-    require => File['jvm::link'],
+    require => File['javac::link'],
   }
 
 }

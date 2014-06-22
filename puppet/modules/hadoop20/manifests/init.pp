@@ -1,5 +1,9 @@
 class hadoop20 {
+
+  include ::java
+
   require hadoop20::params
+
   Exec {
     path => [ "/bin/", "/sbin/" , "/usr/bin/", "/usr/sbin/","/usr/lib/hadoop-2.2.0/bin","/usr/lib/hadoop-2.2.0/sbin" ],
     environment => ["JAVA_HOME=/usr/lib/jvm/default-java","HADOOP_PREFIX=/usr/lib/hadoop-2.2.0","HADOOP_HOME=/usr/lib/hadoop-2.2.0","HADOOP_COMMON_HOME=/usr/lib/hadoop-2.2.0","HADOOP_CONF_DIR=/usr/lib/hadoop-2.2.0/etc/hadoop","HADOOP_HDFS_HOME=/usr/lib/hadoop-2.2.0","HADOOP_MAPRED_HOME=/usr/lib/hadoop-2.2.0","HADOOP_YARN_HOME=/usr/lib/hadoop-2.2.0"]
@@ -8,7 +12,8 @@ class hadoop20 {
   file { 'env.sh':
     ensure => present,
     path => '/etc/profile.d/env.sh',
-    content=>template('hadoop20/env.sh.erb')
+    content=>template('hadoop20/env.sh.erb'),
+
   }
 
   file { 'hadoop-2.0 home dir':

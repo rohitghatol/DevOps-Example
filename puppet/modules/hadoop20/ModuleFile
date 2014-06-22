@@ -1,0 +1,7 @@
+name    'hadoop20'
+version '0.0.1'
+author 'Rohit Ghatol'
+dependency 'java', '0.0.1'
+summary 'Install Apache Hadoop 2.2.0.'
+description "This module deploys Apache Hadoop 2.2.0 on single machine."
+license 'MIT License'

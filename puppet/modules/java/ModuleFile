@@ -1,0 +1,6 @@
+name    'java'
+version '0.0.1'
+author 'Rohit Ghatol'
+summary 'Install java 1.7.'
+description "This module installs java 1.7."
+license 'MIT License'
